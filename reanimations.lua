@@ -623,7 +623,7 @@ LocalPlayer.CharacterAdded:Connect(CharacterAdded)
 -- Display notification first
 StarterGui:SetCore("SendNotification", {
     Title = "Notification";
-    Text = "Private Emote V1 by King and 70";
+    Text = "Reanimations got Launched. Press comma to open.";
     Duration = 5;
 })
 
