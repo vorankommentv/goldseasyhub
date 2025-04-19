@@ -538,7 +538,7 @@ do
 					{
 						Title = "Confirm",
 						Callback = function()
-							loadstring(game:HttpGet("https://pastebin.com/raw/gvWDkaPm"))()
+							loadstring(game:HttpGet("https://raw.githubusercontent.com/vorankommentv/goldseasyhub/refs/heads/main/reanimations.lua"))()
 						end
 					},
 					{
