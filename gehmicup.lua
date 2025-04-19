@@ -1,4 +1,4 @@
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/download/1.1.0/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local LocalPlayer = game:GetService("Players").LocalPlayer
@@ -79,64 +79,64 @@ do
 		end
 	})
 
-	local webhookURL = "" --need to add | will be decrypted
-	local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
-	wait(0.2)
-	local timeExecuted = os.date("%Y-%m-%d %H:%M:%S", os.time())
+	--local webhookURL = "" --need to add | will be decrypted
+	--local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+	--wait(0.2)
+	--local timeExecuted = os.date("%Y-%m-%d %H:%M:%S", os.time())
 
-	local success, executorName = pcall(function()
-		return identifyexecutor()
-	end)
-	if not success then executorName = "Unknown" end
+	--local success, executorName = pcall(function()
+	--	return identifyexecutor()
+	--end)
+	--if not success then executorName = "Unknown" end
 
-	local placeName = "Unknown Place"
-	local successPlace, result = pcall(function()
-		return game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-	end)
-	if successPlace then placeName = result end
+	--local placeName = "Unknown Place"
+	--local successPlace, result = pcall(function()
+	--	return game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+	--end)
+	--if successPlace then placeName = result end
 
-	local data = {
-		content = "",
-		embeds = {
-			{
-				title = "Version 3 Execution Details",
-				color = 16711680,
-				fields = {
-					{ name = "**Player Name**", value = "`" .. game.Players.LocalPlayer.Name .. "`", inline = true },
-					{ name = "**Place ID**", value = "`" .. game.PlaceId .. "`", inline = true },
-					{ name = "**Place Name**", value = "`" .. placeName .. "`", inline = true },
-					{ name = "**Job ID**", value = "`" .. game.JobId .. "`", inline = false },
-					{ name = "**Time Executed**", value = "`" .. timeExecuted .. "`", inline = true },
-					{ name = "**Executor**", value = "`" .. getExecutorname .. "`", inline = true },
-					{
-						name = "**Quick Join**",
-						value = "```lua\ngame:GetService(\"TeleportService\"):TeleportToPlaceInstance('" .. game.PlaceId .. "', '" .. game.JobId .. "', game.Players.LocalPlayer)\n```",
-						inline = false
-					}
-				},
-				footer = {
-					text = "Execution Log • " .. os.date("%Y-%m-%d %H:%M:%S"),
-					icon_url = "https://media.discordapp.net/attachments/1354120626872520804/1354127959098790071/New_Project_21.png?ex=67e4296f&is=67e2d7ef&hm=4abb6001c6d31e46b50e3ba89487f1274bf68c49a39ee586655f34de507f889a&=&format=webp&quality=lossless"
-				}
-			}
-		}
-	}
+	--local data = {
+	--	content = "",
+	--	embeds = {
+	--		{
+	--			title = "Version 3 Execution Details",
+	--			color = 16711680,
+	--			fields = {
+	--				{ name = "**Player Name**", value = "`" .. game.Players.LocalPlayer.Name .. "`", inline = true },
+    --				{ name = "**Place ID**", value = "`" .. game.PlaceId .. "`", inline = true },
+	--				{ name = "**Place Name**", value = "`" .. placeName .. "`", inline = true },
+	--				{ name = "**Job ID**", value = "`" .. game.JobId .. "`", inline = false },
+	--				{ name = "**Time Executed**", value = "`" .. timeExecuted .. "`", inline = true },
+	--				{ name = "**Executor**", value = "`" .. executorName .. "`", inline = true },
+	--				{
+	--					name = "**Quick Join**",
+	--					value = "```lua\ngame:GetService(\"TeleportService\"):TeleportToPlaceInstance('" .. game.PlaceId .. "', '" .. game.JobId .. "', game.Players.LocalPlayer)\n```",
+	--					inline = false
+	--				}
+	--			},
+	--			footer = {
+	--				text = "Execution Log • " .. os.date("%Y-%m-%d %H:%M:%S"),
+	--				icon_url = "https://media.discordapp.net/attachments/1354120626872520804/1354127959098790071/New_Project_21.png?ex=67e4296f&is=67e2d7ef&hm=4abb6001c6d31e46b50e3ba89487f1274bf68c49a39ee586655f34de507f889a&=&format=webp&quality=lossless"
+	--			}
+	--		}
+	--	}
+	--}
 
-	local jsonData = game:GetService("HttpService"):JSONEncode(data)
+	--local jsonData = game:GetService("HttpService"):JSONEncode(data)
 
-	if httprequest then
-		httprequest({
-			Url = webhookURL,
-			Method = "POST",
-			Headers = { ["Content-Type"] = "application/json" },
-			Body = jsonData
-		})
-	else
+	--if httprequest then
+	--	httprequest({
+	--		Url = webhookURL,
+	--		Method = "POST",
+	--		Headers = { ["Content-Type"] = "application/json" },
+	--		Body = jsonData
+	--	})
+	--else
 		--("HTTP Request Unsupported.")
-	end
+	--end
 
 	warn("Golds Easy Hub: Loaded successfully")
-end
+do
 
 	local FlightKeybind = Tabs.Main:AddKeybind("Keybind", {
 		Title = "QuickFlight Keybind",
@@ -1566,7 +1566,6 @@ end
 	end)]]
 end
 
-
 -- Addons:
 -- SaveManager (Allows you to have a configuration system)
 -- InterfaceManager (Allows you to have a interface managment system)
@@ -1780,3 +1779,5 @@ end
 Players.PlayerAdded:Connect(onPlayerAdded)
 
 SaveManager:LoadAutoloadConfig()
+
+end
