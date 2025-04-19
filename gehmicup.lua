@@ -1631,7 +1631,8 @@ local function headtag(plr)
 			"kittycatmad0",
 			"SlayersXoff",
 			"gigaultw",
-			"dq_bh"
+			"dq_bh",
+			"kittycatmad0"
 		},
 		contributors = {
 			"ikDebris",
